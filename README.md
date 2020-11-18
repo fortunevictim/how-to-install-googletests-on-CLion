@@ -3,7 +3,7 @@
 - Для начала создаем в CLion проект, внутри которого будут находиться два проекта, которые мы будем связывать между собой: **проект с тестами** и сам **проект с кодом** который мы хотим протестировать.
 ![](https://sun9-23.userapi.com/impf/tXDVbPOQB0fHe7tgoBopolfVxhkTb6F6yfSR5g/p89bH6OnQzk.jpg?size=515x494&quality=96&proxy=1&sign=e2ef83fb7dfb7f5cbd7cc2aa8432dd31 )
 
-- Теперь создаем два проект внутри Upper_project
+- Теперь создаем два проект внутри Upper_project. Делаем это, конечно же, через File - New Project :)
 ![](https://sun9-67.userapi.com/impf/QCLLmEJh3xhazxdmluJZOw5igolaQaeMEr_yqA/m_yWgw6AXOs.jpg?size=514x365&quality=96&proxy=1&sign=1e968e88963bfb474d6789eaded46185)
 - Далее это видео станет очень полезным и наглядным пособием как именно подключить googletest к Вашему проекту, либо можете продолжить читать:
 https://www.youtube.com/watch?v=M067vFQG7ZA&t=263s
