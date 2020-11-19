@@ -1,10 +1,12 @@
 ## Как установить Gtests на Clion и сделать аналог Solution от VS.
 
 - Для начала создаем в CLion проект Upper_project, внутри которого будут находиться два проекта, которые мы будем связывать между собой: **проект с тестами** и сам **проект с кодом** который мы хотим протестировать.
+
 ![](https://sun9-23.userapi.com/impf/tXDVbPOQB0fHe7tgoBopolfVxhkTb6F6yfSR5g/p89bH6OnQzk.jpg?size=515x494&quality=96&proxy=1&sign=e2ef83fb7dfb7f5cbd7cc2aa8432dd31 )
 
 - Проект Upper_project выполняет здесь роль, аналогичную роли Solution в Visual Studio. Немного позже мы подключим в него необходимые нам проекты, но пока что это всего лишь обычный проект.
 - Теперь создаем два проект внутри папки Upper_project: назовем их gtestset и lab1_src. Делаем это, конечно же, через File - New Project :) . Выглядеть ваш Upper_project будет так:
+
 ![](https://sun9-67.userapi.com/impf/QCLLmEJh3xhazxdmluJZOw5igolaQaeMEr_yqA/m_yWgw6AXOs.jpg?size=514x365&quality=96&proxy=1&sign=1e968e88963bfb474d6789eaded46185)
 ![](https://sun9-44.userapi.com/impf/D5JYewe3vx_haByaRvTfx8OLHXJYXY7EBMkVIA/B557AYwHMFc.jpg?size=273x175&quality=96&proxy=1&sign=8c3441618fe14c1b56a3dd853538c33b)
 - Далее это видео станет очень полезным и наглядным пособием как именно подключить googletest к Вашему проекту, либо можете продолжить читать:
@@ -14,9 +16,11 @@ https://www.youtube.com/watch?v=M067vFQG7ZA&t=263s
 - По запросу google tests Вам необходимо скачать репозиторий с github.
 - Внутри папки проетка gtestset надо создать папки tests и lib. В папку lib вы просто копируете googleteset-master.
 - В CLion внутри папки tests Вам надо создать .cpp файл, назовем его TestForSet.cpp:
+
 ![](https://sun9-44.userapi.com/impf/zfMABEgAhXkVyhqJoavYYbMs0zf5Nswjc8SFlg/9xJaLiUm1po.jpg?size=494x219&quality=96&proxy=1&sign=4251e88baa2fc6156b01dc44404198bd)
 
 - Теперь отредактируем файл (gtestset/main.cpp), чтобы он выглядел так(код ниже):
+
 ![](https://sun9-57.userapi.com/impf/z7RlntaeZ0YvJzB83XyQXu5snCpCJ6yNiKiBlw/w-wfFjbNDjw.jpg?size=873x314&quality=96&proxy=1&sign=b6cf3e87d82e136f525be7db52cbc711)
 
 - Код для gtestset/main.cpp
@@ -34,6 +38,7 @@ int main(int argc, char *arg[]) {
 
 - Здесь Upper_project соответствующее имя проекта, которое вы создали, а директории идущие после слеша в последних двух строках - названия ваших проектов, которые Вы создали внутри Upper_project'а . # 1
 - Файл CMakeLists.txt у Upper Project должен выглядеть так(код ниже):
+
 ![](https://sun9-10.userapi.com/impf/xJug5YxYF-RyK87oGynHQl4X43kw2qbqNAhgkg/83V6lgAU4xI.jpg?size=844x204&quality=96&proxy=1&sign=cbf6b9f254a80a277b8c948299ba4a38)
 
 - Код для CMake:
@@ -52,6 +57,7 @@ add_subdirectory("${PROJECT_SOURCE_DIR}/gtestset")
 
 
 - Теперь отредактируем CMakeList.txt у этих внутренних проктов. Начнем с репозитория с кодом, который будет проверять тестами (lab1_src/CMakeLists.txt) . Файл должен выглядеть так (код ниже):
+
 ![](https://sun9-22.userapi.com/impf/gipzDDcvh4STA0-7Qk95ty114MBWllTKZlcQjg/5_Z_072lYKI.jpg?size=884x356&quality=96&proxy=1&sign=fc2a19dd3252c52309f1b3a8ab6b3c1e)
 
 - Заметьте, значение project(*name*) сменилось с lab1_src на Upper_project. Это нужно для того, чтобы открывать оба проекта как один - это и есть аналогия с Soultion, которой мы хотим добиться. Строка add_executable отсутствует, поскольку Ваш код будет являться константной библиотекой, которую мы создаем последними двумя строками. Во второй строке set должны быть все файлы кроме main.cpp, а первым ее параметром является обобщающее имя для всех следом указанных файлов.
@@ -69,6 +75,7 @@ add_library(lab1_src ${lab1_src_files})
 ```
 
 - Теперь открываем CMakeList.txt у проекта, в котором будут реализованы тесты (gtestset/CMakeLists.txt). Аналогично меняем на данные строки (код ниже):
+
 ![](https://sun9-8.userapi.com/impf/LyNKymbJz1l3qhLJFpLQHXHwdX3JrwEN--G6Xw/N19KYkQhfdA.jpg?size=919x407&quality=96&proxy=1&sign=84512286c7fa116dd0e303387108cca6)
 
 ```
