@@ -24,6 +24,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++0x")
 add_subdirectory("${PROJECT_SOURCE_DIR}/lab1_src")
 add_subdirectory("${PROJECT_SOURCE_DIR}/gtestset")
 
+ - Чуть более подробно написано здесь: https://stackoverflow.com/questions/36443085/is-there-a-way-to-work-on-multiple-projects-in-clion
+
 - Здесь Upper_project соответствующее имя проекта, которое вы создали, а директории идущие после / в последних двух строках - названия ваших проектов, которые Вы создали внутри Upper'а .
 - Теперь отредактируем CMakeList.txt у этих внутренних проктов. Начнем в репозитория с кодом, который будет проверять тестами. Файл должен выглядеть так:
 
