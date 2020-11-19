@@ -12,6 +12,7 @@ https://www.youtube.com/watch?v=M067vFQG7ZA&t=263s
 - По запросу google tests Вам необходимо скачать репозиторий с github.
 - Внутри папки проетка gtestset надо создать папки tests и lib. В папку lib вы просто копируете googleteset-master.
 - В CLion внутри папки tests Вам надо создать .cpp файл:
+
 ![](https://sun9-44.userapi.com/impf/zfMABEgAhXkVyhqJoavYYbMs0zf5Nswjc8SFlg/9xJaLiUm1po.jpg?size=494x219&quality=96&proxy=1&sign=4251e88baa2fc6156b01dc44404198bd)
 
 - Теперь будем настраивать связи между проектами. Файл CMakeLists.txt у Upper Project должен выглядеть так:
