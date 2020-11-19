@@ -32,7 +32,7 @@ int main(int argc, char *arg[]) {
     return RUN_ALL_TESTS();
 }
 ```
-##Настройка связей ##
+## Настройка связей ##
 - Теперь будем настраивать связи между проектами.
 > - Можно посмотреть здесь: https://stackoverflow.com/questions/36443085/is-there-a-way-to-work-on-multiple-projects-in-clion
 
@@ -111,7 +111,7 @@ target_link_libraries(gtestset gtest gtest_main lab1_src)
 - В тот момент, когда вы захотите проверить работоспособность своего кода, Вам нужно будет открыть с помощью CLion Upper_project, и либо дойти до файла TestForSet.cpp и в единичном порядке запускать тесты, либо дойти до (gtestset/main.cpp) и собрать его. Здесть RUN_ALL_TESTS сам найдет все написанные Вами тесты и прогонит их. Пример успешной отработки теста будет ниже :)
 ![](https://sun9-20.userapi.com/impf/wK6ymqxbRe8mJ7IOLFJk4yep4ZoVM3is-YP5BA/sP8A9iJGvEA.jpg?size=1600x984&quality=96&proxy=1&sign=fecf2c6310a5dc9b1241657875d2d8e9)
 
-## Возможные ошибки @@
+## Возможные ошибки ##
 1) Во время сборки тестов вы видите что-то такое:
 ![](https://sun9-2.userapi.com/impf/CRJol4CMH8Oqx_Me7XiR9JDsQV4LBVZfZds_xw/NSN7e7h1J1I.jpg?size=1533x407&quality=96&proxy=1&sign=ba469729a195d304aeb96216d644cfe3)
  В этом случае проблема в компиляторе. Лично мне помогла смена mingw32 на mingw64, поскольку простое переключение с -std=gnu++0x на -std=c++0x под mingw32 не помогло.
