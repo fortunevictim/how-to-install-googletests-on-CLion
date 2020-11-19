@@ -17,7 +17,7 @@ https://www.youtube.com/watch?v=M067vFQG7ZA&t=263s
 
 - Теперь будем настраивать связи между проектами. Файл CMakeLists.txt у Upper Project должен выглядеть так:
 
---
+```
 
 cmake_minimum_required(VERSION 3.5)
 
@@ -28,7 +28,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++0x")
 add_subdirectory("${PROJECT_SOURCE_DIR}/lab1_src")
 add_subdirectory("${PROJECT_SOURCE_DIR}/gtestset")
 
---
+```
 
  - Чуть более подробно написано здесь: https://stackoverflow.com/questions/36443085/is-there-a-way-to-work-on-multiple-projects-in-clion
 
