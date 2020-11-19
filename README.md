@@ -16,7 +16,10 @@ https://www.youtube.com/watch?v=M067vFQG7ZA&t=263s
 
 - Теперь будем настраивать связи между проектами. Файл CMakeLists.txt у Upper Project должен выглядеть так:
 
+--
+
 cmake_minimum_required(VERSION 3.5)
+
 project(Upper_project)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++0x")
@@ -24,12 +27,17 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++0x")
 add_subdirectory("${PROJECT_SOURCE_DIR}/lab1_src")
 add_subdirectory("${PROJECT_SOURCE_DIR}/gtestset")
 
+--
+
  - Чуть более подробно написано здесь: https://stackoverflow.com/questions/36443085/is-there-a-way-to-work-on-multiple-projects-in-clion
 
 - Здесь Upper_project соответствующее имя проекта, которое вы создали, а директории идущие после / в последних двух строках - названия ваших проектов, которые Вы создали внутри Upper'а .
 - Теперь отредактируем CMakeList.txt у этих внутренних проктов. Начнем в репозитория с кодом, который будет проверять тестами. Файл должен выглядеть так:
 
+--
+
 cmake_minimum_required(VERSION 3.5)
+
 project(Upper_project)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++0x")
@@ -38,11 +46,16 @@ set(lab1_src_files Trit.cpp Trit.h TritSet.cpp TritSet.h)
 
 add_library(lab1_src ${lab1_src_files})
 
+--
+
 - Заметьте, значение project(*name*) сменилось на Upper_project. Это нужно для того, чтобы открывать оба проекта как один. Строка add_executable отсутствует, поскольку Ваш код будет являться константной библиотекой, которую мы создаем последними двумя строками. В строке set должны быть все файлы кроме main.cpp.
 
 -Теперь открываем CMakeList.txt у проекта, в котором будут реализованы тесты. Аналогично меняем на данные строки:
 
+--
+
 cmake_minimum_required(VERSION 3.5)
+
 project(Upper_project)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
@@ -58,6 +71,8 @@ set(SOURCE_FILES main.cpp tests/TestForSet.cpp)
 add_executable(gtestset ${SOURCE_FILES} tests/TestForSet.cpp)
 
 target_link_libraries(gtestset gtest gtest_main lab1_src) #3
+
+--
 
 - Часть строк здесь из прикрепленного ранее видео на youtube, нам интересуют строки с номерами. Первыми двумя мы подключаем саму директорию с кодом, а в последней прописываем библиотеку, ранее созданную в другом CMake файле.
 
