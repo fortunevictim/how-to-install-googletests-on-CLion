@@ -114,10 +114,10 @@ target_link_libraries(gtestset gtest gtest_main lab1_src)
 ## Возможные ошибки ##
 1) Во время сборки тестов вы видите что-то такое:
 ![](https://sun9-2.userapi.com/impf/CRJol4CMH8Oqx_Me7XiR9JDsQV4LBVZfZds_xw/NSN7e7h1J1I.jpg?size=1533x407&quality=96&proxy=1&sign=ba469729a195d304aeb96216d644cfe3)
- В этом случае проблема в компиляторе. Лично мне помогла смена mingw32 на mingw64, поскольку простое переключение с -std=gnu++0x на -std=c++0x под mingw32 не помогло.
+ - В этом случае проблема в компиляторе. Лично мне помогла смена mingw32 на mingw64, поскольку простое переключение с -std=gnu++0x на -std=c++0x под mingw32 не помогло.
 2) В выведенной информации в консоль вы видите нечто такое:
 ![](https://sun9-7.userapi.com/impf/tjxrWuhBY7hpWz1pPlsJXmtLQWKtBCincLHY8Q/7cl1u9jQZw0.jpg?size=1026x144&quality=96&proxy=1&sign=90a405f804231ba3cfdedc34fc2bf298)
-Во-первых, проверьте из какого именно проекта вы пытаетесь собрать тесты. Это должен быть именно Upper_project.
-Во-вторых, проверьте, совпадают ли имена библиотеки которую вы создали в (lab1_src/CMakeLists.txt) и имя то, что вы указали в (gtestset/CMakeLists.txt) в последней строке.
+- Во-первых, проверьте из какого именно проекта вы пытаетесь собрать тесты. Это должен быть именно Upper_project.
+- Во-вторых, проверьте, совпадают ли имена библиотеки которую вы создали в (lab1_src/CMakeLists.txt) и имя то, что вы указали в (gtestset/CMakeLists.txt) в последней строке.
 
 Если заметили ошибки или хотите увеличить точность руковоства, пишите мне: vk.com/fortune_victim
