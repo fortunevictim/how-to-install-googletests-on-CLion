@@ -162,6 +162,9 @@ target_link_libraries(gtestsetexe lab1_src gtest gtest_main ${GTEST_LIBRARIES} p
 ```
 
 - Теперь создадим инструкцию. Откройте Test_repo, где у Вас лежит Upper_project, и создайте файл с таким именем и разрешением: bitbucket-pipelines.yml.
+
+![](https://sun9-51.userapi.com/impg/9yHFlMpvtaE9lZlW56s4huqHABNW3DPrCmGvNg/0x3cASd7gog.jpg?size=255x44&quality=96&proxy=1&sign=5ee5be1a209268ddbf0f60dc51732438)
+
 - В нем с помощью любого текстового редактора пишем строки, приведенные ниже. Поскольку exe файл собирается по умолчанию в корневой директории проекта, то у нас он будет собираться в папке Upper_poject/gtestset . Значит, последняя строка будет такой: ./gtestset/gtestsetexe
 - После build/ надо указать путь к вашему проекту, в котором будет все происходить. Надо указать имя папки которую мы будем пушить на сам BitBucket, то есть Test_repo. В моем случае это build/lab1
 
@@ -190,6 +193,7 @@ script:
 ```
 
 - С редактированием мы разобрались, теперь пушим. Выглядеть ваша ветка в репозитории должна выглядеть примерно так: Проект Upper_project (У меня это lab1) и файл .yml
+
 ![](https://sun9-34.userapi.com/impg/QiO2HJIedRIX7gzKehOg9XQR1KCGbkF10PTQiA/muyQKHzOQhc.jpg?size=533x244&quality=96&proxy=1&sign=b50ac124314b2abd92f3154e3dd591fb)
 
 - Теперь ваш Pipeline должен автоматически начать собираться во вкладке Pipelines.
