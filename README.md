@@ -131,8 +131,8 @@ target_link_libraries(gtestset gtest gtest_main lab1_src)
 
 ## Как запустить pipelines для ваших тестов на BitBucket ##
 - На BitBucket зайдите в Ваш репозиторий, затем в настройки репозитория. Промотайте вниз у заметьте вкладку Pipelines. Далее settings и сдалайте ползунок зеленым, переключив его на enabled. Теперь к BitBucket вернемся только в конце.
-- Вам необходимо создать папку, которая будет связано с вашим репозиторией, а если еще точнее, то с веткой на которой мы будем работать. Далее я предполагаю, что работать мы будем внутри этой самой папки. Для наглядности буду называть ее Test_repo.
-- Скопируйте в Test_repo вашу папку с Upper_project. 
+- Вам необходимо создать папку, которая будет связано с вашим репозиторием, а если еще точнее, то с веткой на которой мы будем работать. Далее я предполагаю, что работать мы будем внутри этой самой папки. Для наглядности буду называть ее Branch.
+- Скопируйте в Branch вашу папку с Upper_project. 
 - Начнем с редактирования CMakeLists.txt и добавления файла-инструкции в наш проект для Pipelines.
 - Открываем проект Upper_project и находим там gtestset\CMakeLists.txt. (Нумерация по скриншоту ниже) Надо добавить строки 4, 12, в строке 16 и 18 изменить имя собираемого exe файла, чтобы при сборке название папки не совпадало с названием исполняемого файла(был gtestset.exe стал gtestsetexe.exe), в строку 18 дописать последние 2 аргумента. Полноценный код из файла ниже.
 
@@ -161,14 +161,14 @@ target_link_libraries(gtestsetexe lab1_src gtest gtest_main ${GTEST_LIBRARIES} p
 
 ```
 
-- Теперь создадим инструкцию. Откройте Test_repo, где у Вас лежит Upper_project, и создайте файл с таким именем и разрешением: bitbucket-pipelines.yml.
+- Теперь создадим инструкцию. Откройте Branch, где у Вас лежит Upper_project, и создайте файл с таким именем и разрешением: bitbucket-pipelines.yml.
 
 ![](https://sun9-51.userapi.com/impg/9yHFlMpvtaE9lZlW56s4huqHABNW3DPrCmGvNg/0x3cASd7gog.jpg?size=255x44&quality=96&proxy=1&sign=5ee5be1a209268ddbf0f60dc51732438)
 
 - В нем с помощью любого текстового редактора пишем строки, приведенные ниже. Поскольку exe файл собирается по умолчанию в корневой директории проекта, то у нас он будет собираться в папке Upper_poject/gtestset . Значит, последняя строка будет такой: ./gtestset/gtestsetexe
-- После build/ надо указать путь к вашему проекту, в котором будет все происходить. Надо указать имя папки которую мы будем пушить на сам BitBucket, то есть Test_repo. В моем случае это build/lab1
+- После build/ надо указать путь к вашему проекту, в котором будет все происходить. Надо указать имя папки которую мы будем пушить на сам BitBucket, то есть Upper_project. Поэтому пишем  build/Upper_project.
 
-![](https://sun9-28.userapi.com/impg/ku2uSOdcZo6vUxseevnpjoKbMBNHpN-buBc85g/y3JecZfm-7w.jpg?size=508x287&quality=96&proxy=1&sign=0768c5f65ced7a9dbd33b396319e63c4)
+![](https://sun9-53.userapi.com/impg/rmoNlgDnMMdyhxbt1iKnqAWF-Y6r8choUpd_OQ/ODb-Sa39h9c.jpg?size=616x315&quality=96&proxy=1&sign=ed8c709c40ab979020bd9ac32228278e)
 
 ```
 
@@ -185,7 +185,7 @@ script:
 - cmake .
 - make
 - cp *.a /usr/lib
-- cd /opt/atlassian/pipelines/agent/build/lab1/
+- cd /opt/atlassian/pipelines/agent/build/Upper_project/
 - cmake .
 - make
 - ./gtestset/gtestsetexe
