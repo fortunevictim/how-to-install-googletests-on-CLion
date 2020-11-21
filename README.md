@@ -136,6 +136,8 @@ target_link_libraries(gtestset gtest gtest_main lab1_src)
 - Начнем с редактирования CMakeLists.txt и добавления файла-инструкции в наш проект для Pipelines.
 - Открываем проект Upper_project и находим там gtestset\CMakeLists.txt. (Нумерация по скриншоту ниже) Надо добавить строки 4, 12, в строке 16 и 18 изменить имя собираемого exe файла, чтобы при сборке название папки не совпадало с названием исполняемого файла(был gtestset.exe стал gtestsetexe.exe), в строку 18 дописать последние 2 аргумента. Полноценный код из файла ниже.
 
+ - Обращу внимание, что ВО ВСЕХ Cmake файлах версия Cmake первой строкой должна быть 3.5 и не другая, поскольку на BitBucket это максимальная версия Cmake.
+
 ![](https://sun9-32.userapi.com/impg/DhhWtHdNDjYJzOjjSrnSFEPQ_56Mrrw6qU-1jQ/_B2ZyF1Z-Y4.jpg?size=771x405&quality=96&proxy=1&sign=bb508d26387e576695f182e79b820a70)
 
 ```
