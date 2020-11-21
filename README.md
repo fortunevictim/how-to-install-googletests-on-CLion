@@ -84,7 +84,7 @@ add_library(lab1_src ${lab1_src_files})
 
 - Теперь открываем CMakeList.txt у проекта, в котором будут реализованы тесты (gtestset/CMakeLists.txt). Аналогично меняем на данные строки (код ниже):
 
-![](https://sun9-34.userapi.com/impg/ZcJZh-UbBr39Hgj87BmcXjewmDJO-pWWq9CABQ/mlVkcfC2pl0.jpg?size=850x317&quality=96&proxy=1&sign=ac9ba63706021ab400dc66000309910e)
+![](https://sun9-68.userapi.com/impg/xMhNghw8N5dR4dvjd51P2Nr_oTSmxxs-g-UePA/0fZ8f_go8Cg.jpg?size=880x318&quality=96&proxy=1&sign=4487f5931a49795ce7715f0964623395)
 
 ```
 
