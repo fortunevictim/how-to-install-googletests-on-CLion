@@ -122,15 +122,15 @@ target_link_libraries(gtestset gtest gtest_main lab1_src)
  - В этом случае проблема в компиляторе. Лично мне помогла смена mingw32 на mingw64, поскольку простое переключение с -std=gnu++0x на -std=c++0x под mingw32 не помогло.
 2) В выведенной информации в консоль вы видите нечто такое:
 ![](https://sun9-7.userapi.com/impf/tjxrWuhBY7hpWz1pPlsJXmtLQWKtBCincLHY8Q/7cl1u9jQZw0.jpg?size=1026x144&quality=96&proxy=1&sign=90a405f804231ba3cfdedc34fc2bf298)
-- Во-первых, проверьте из какого именно проекта вы пытаетесь собрать тесты. Это должен быть именно Upper_project.
+- Во-первых, проверьте, из какого именно проекта вы пытаетесь собрать тесты. Это должен быть именно Upper_project.
 - Во-вторых, проверьте, совпадают ли имена библиотеки которую вы создали в (lab1_src/CMakeLists.txt) и имя то, что вы указали в (gtestset/CMakeLists.txt) в последней строке.
 
 
-Если заметили ошибки или хотите увеличить точность руковоства, пишите мне: vk.com/fortune_victim
+Если заметили ошибки или хотите увеличить точность руководства, пишите мне: vk.com/fortune_victim
 
 
 ## Как запустить pipelines для ваших тестов на BitBucket ##
-- На BitBucket зайдите в Ваш репозиторий, затем в настройки репозитория. Промотайте вниз и заметьте вкладку Pipelines. Далее settings и сдалайте ползунок зеленым, переключив его на enabled.
+- Откройте Bitbucket. На BitBucket зайдите в Ваш репозиторий, затем в настройки репозитория. Промотайте вниз и заметьте вкладку Pipelines. Далее settings и сделайте ползунок зеленым, переключив его на enabled.
 - Теперь Вам необходимо клонировать репозиторий в любое удобное для вас место. Мой репозиторий с названием lab1 был клонирован в одноименную папку на компьютере, но для наглядности далее я буду использовать Branch.
 - Скопируйте в Branch вашу папку с Upper_project. 
 - Начнем с редактирования CMakeLists.txt и добавления файла-инструкции в наш проект для Pipelines.
@@ -163,7 +163,7 @@ target_link_libraries(gtestsetexe lab1_src gtest gtest_main ${GTEST_LIBRARIES} p
 
 ```
 
-- Не удивляйетесь тому, что сейчам Ваш скопированный в Branch проект Upper_project не запускается и выглядит это примерно так, itBucket:
+- Не удивляйетесь тому, что сейчас Ваш скопированный в Branch проект Upper_project не запускается и выглядит это примерно так, itBucket:
 
 ![](https://sun9-58.userapi.com/impg/GQeYnbt9h8AdZHwuGYfsM7obBNbS_HQ6hiDRqg/mRGfK_P6LQI.jpg?size=1175x191&quality=96&proxy=1&sign=74d347931eb6ee1fcce4c9a63d5719e7)
 
@@ -191,7 +191,7 @@ pipelines:
           - cmake .
           - make
           - cp *.a /usr/lib
-          - cd /opt/atlassian/pipelines/agent/build/lab1/
+          - cd /opt/atlassian/pipelines/agent/build/Upper_project/
           - cmake .
           - make
           - ./gtestset/gtestsetexe
@@ -204,8 +204,8 @@ pipelines:
 
 - Теперь ваш Pipeline должен автоматически начать собираться во вкладке Pipelines.
 
-- Еслс все сделано верно и все тесты проходились локально до изменеения CMakeLiests, то Вы увидите примерно это :)
+- Если все сделано верно и все тесты проходились локально до изменения CMakeLists, то Вы увидите примерно это :)
 
 ![](https://sun9-43.userapi.com/impg/xVzqN6ebGQ0QpmpNWH8Vzl_tGXkB2QnB5CwWmQ/PNzdRq_-r44.jpg?size=1318x92&quality=96&proxy=1&sign=e965e8ee7a0cf30a9e6ab12f1e8badb1)
 
-Если заметили ошибки или хотите увеличить точность руковоства, пишите мне: vk.com/fortune_victim
+Если заметили ошибки или хотите увеличить точность руководства, пишите мне: vk.com/fortune_victim
