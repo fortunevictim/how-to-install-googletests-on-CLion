@@ -1,7 +1,7 @@
 # Как установить Gtests на Clion и сделать аналог Solution от VS. #
 ## Дополнительно(внизу): Как запустить pipelines для ваших тестов на BitBucket ##
 
-- Для начала создаем в CLion проект Upper_project, внутри которого будут находиться два проекта, которые мы будем связывать между собой: **проект с тестами** и сам **проект с кодом** который мы хотим протестировать.
+- Для начала создаем в CLion проект Upper_project, внутри которого будут находиться два проекта, которые мы будем связывать между собой: **проект с тестами** и сам **проект с кодом**, который мы хотим протестировать.
 
 ![](https://sun9-23.userapi.com/impf/tXDVbPOQB0fHe7tgoBopolfVxhkTb6F6yfSR5g/p89bH6OnQzk.jpg?size=515x494&quality=96&proxy=1&sign=e2ef83fb7dfb7f5cbd7cc2aa8432dd31 )
 
@@ -41,7 +41,7 @@ int main(int argc, char *arg[]) {
 - Теперь будем настраивать связи между проектами.
 > - Можно посмотреть здесь: https://stackoverflow.com/questions/36443085/is-there-a-way-to-work-on-multiple-projects-in-clion
 
-- Здесь Upper_project соответствующее имя проекта, которое вы создали, а директории идущие после слеша в последних двух строках - названия ваших проектов, которые Вы создали внутри Upper_project'а . # 1
+- Здесь Upper_project соответствующее имя проекта, которое вы создали, а директории, идущие после слеша в последних двух строках, - названия ваших проектов, которые Вы создали внутри Upper_project'а.
 - Файл CMakeLists.txt у Upper Project должен выглядеть так(код ниже):
 
 ![](https://sun9-10.userapi.com/impf/xJug5YxYF-RyK87oGynHQl4X43kw2qbqNAhgkg/83V6lgAU4xI.jpg?size=844x204&quality=96&proxy=1&sign=cbf6b9f254a80a277b8c948299ba4a38)
@@ -62,7 +62,7 @@ add_subdirectory("${PROJECT_SOURCE_DIR}/gtestset")
 ```
 
 
-- Теперь отредактируем CMakeList.txt у этих внутренних проктов. Начнем с репозитория с кодом, который будет проверять тестами (lab1_src/CMakeLists.txt) . Файл должен выглядеть так (код ниже):
+- Теперь отредактируем CMakeList.txt у этих внутренних проктов. Начнем с репозитория с кодом, который будет проверяться тестами (lab1_src/CMakeLists.txt) . Файл должен выглядеть так (код ниже):
 
 ![](https://sun9-22.userapi.com/impf/gipzDDcvh4STA0-7Qk95ty114MBWllTKZlcQjg/5_Z_072lYKI.jpg?size=884x356&quality=96&proxy=1&sign=fc2a19dd3252c52309f1b3a8ab6b3c1e)
 
