@@ -130,7 +130,7 @@ target_link_libraries(gtestset gtest gtest_main lab1_src)
 
 
 ## Как запустить pipelines для ваших тестов на BitBucket ##
-- На BitBucket зайдите в Ваш репозиторий, затем в настройки репозитория. Промотайте вниз у заметьте вкладку Pipelines. Далее settings и сдалайте ползунок зеленым, переключив его на enabled.
+- На BitBucket зайдите в Ваш репозиторий, затем в настройки репозитория. Промотайте вниз и заметьте вкладку Pipelines. Далее settings и сдалайте ползунок зеленым, переключив его на enabled.
 - Теперь Вам необходимо клонировать репозиторий в любое удобное для вас место. Мой репозиторий с названием lab1 был клонирован в одноименную папку на компьютере, но для наглядности далее я буду использовать Branch.
 - Скопируйте в Branch вашу папку с Upper_project. 
 - Начнем с редактирования CMakeLists.txt и добавления файла-инструкции в наш проект для Pipelines.
@@ -161,6 +161,10 @@ target_link_libraries(gtestsetexe lab1_src gtest gtest_main ${GTEST_LIBRARIES} p
 
 ```
 
+- Не удивляйетесь тому, что сейчам Ваш скопированный в Branch проект Upper_project не запускается и выглядит это примерно так, itBucket:
+
+![](https://sun9-58.userapi.com/impg/GQeYnbt9h8AdZHwuGYfsM7obBNbS_HQ6hiDRqg/mRGfK_P6LQI.jpg?size=1175x191&quality=96&proxy=1&sign=74d347931eb6ee1fcce4c9a63d5719e7)
+
 - Теперь создадим инструкцию. Откройте Branch, где у Вас лежит Upper_project, и создайте файл с таким именем и разрешением: bitbucket-pipelines.yml.
 
 ![](https://sun9-51.userapi.com/impg/9yHFlMpvtaE9lZlW56s4huqHABNW3DPrCmGvNg/0x3cASd7gog.jpg?size=255x44&quality=96&proxy=1&sign=5ee5be1a209268ddbf0f60dc51732438)
@@ -175,20 +179,20 @@ target_link_libraries(gtestsetexe lab1_src gtest gtest_main ${GTEST_LIBRARIES} p
 image: atlassian/default-image:2
 
 pipelines:
-default:
-- step:
-script:
-- apt-get update -y
-- apt-get install -y cmake
-- apt-get install -y libgtest-dev
-- cd /usr/src/gtest
-- cmake .
-- make
-- cp *.a /usr/lib
-- cd /opt/atlassian/pipelines/agent/build/Upper_project/
-- cmake .
-- make
-- ./gtestset/gtestsetexe
+  default:
+    - step:
+        script:
+          - apt-get update -y
+          - apt-get install -y cmake
+          - apt-get install -y libgtest-dev
+          - cd /usr/src/gtest
+          - cmake .
+          - make
+          - cp *.a /usr/lib
+          - cd /opt/atlassian/pipelines/agent/build/lab1/
+          - cmake .
+          - make
+          - ./gtestset/gtestsetexe
 
 ```
 
@@ -198,7 +202,7 @@ script:
 
 - Теперь ваш Pipeline должен автоматически начать собираться во вкладке Pipelines.
 
-- Еслс все сделано верно и все тесты проходятся локально, то Вы увидите примерно это :)
+- Еслс все сделано верно и все тесты проходились локально до изменеения CMakeLiests, то Вы увидите примерно это :)
 
 ![](https://sun9-43.userapi.com/impg/xVzqN6ebGQ0QpmpNWH8Vzl_tGXkB2QnB5CwWmQ/PNzdRq_-r44.jpg?size=1318x92&quality=96&proxy=1&sign=e965e8ee7a0cf30a9e6ab12f1e8badb1)
 
