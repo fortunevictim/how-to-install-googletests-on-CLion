@@ -198,7 +198,7 @@ pipelines:
 
 ```
 
-- С редактированием мы разобрались, теперь пушим. Выглядеть ваша ветка в репозитории должна выглядеть примерно так: Проект Upper_project (У меня это lab1) и файл .yml
+- С редактированием мы разобрались, теперь пушим. Выглядеть ваша ветка в репозитории должна примерно так: Проект Upper_project (У меня это lab1) и файл .yml
 
 ![](https://sun9-34.userapi.com/impg/QiO2HJIedRIX7gzKehOg9XQR1KCGbkF10PTQiA/muyQKHzOQhc.jpg?size=533x244&quality=96&proxy=1&sign=b50ac124314b2abd92f3154e3dd591fb)
 
